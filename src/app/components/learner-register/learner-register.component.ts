@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
+import { HttpClient} from '@angular/common/http';
 import { NgFlashMessageService } from 'ng-flash-messages';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -19,11 +21,32 @@ export class LearnerRegisterComponent implements OnInit {
   tNc: boolean;
 
   constructor(private validateService: ValidateService,
-    private flashMessage: NgFlashMessageService) { }
+    private flashMessage: NgFlashMessageService,
+    private http: HttpClient
+    ) { }
 
   ngOnInit() {
   }
 
+  
+  onLearnerRegisterSubmit(learner){
+    console.log(learner)
+
+    var body = "firstName="+learner.firstName
+              +"&lastName="+learner.lastName
+              +"&contact="+learner.contact;
+
+    let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+
+    this.http.post('http://localhost:3000/learner-register',body,
+            {headers: headers, responseType:'text'}).subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      )
+  }
+  
+
+  /*
   onLearnerRegisterSubmit(){
     const user = {
       firstName: this.firstName,
@@ -78,5 +101,6 @@ export class LearnerRegisterComponent implements OnInit {
       }); 
     }
   }
+  */
 
 }
