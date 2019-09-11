@@ -30,7 +30,7 @@ export class LearnerRegisterComponent implements OnInit {
 
   
   onLearnerRegisterSubmit(learner){
-    console.log(learner)
+    console.log(learner.value)
 
     var body = "firstName="+learner.firstName
               +"&lastName="+learner.lastName
@@ -38,7 +38,7 @@ export class LearnerRegisterComponent implements OnInit {
 
     let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
 
-    this.http.post('http://localhost:3000/learner-register',body,
+    this.http.post('http://localhost:3000/album/',body,
             {headers: headers, responseType:'text'}).subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
