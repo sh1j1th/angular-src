@@ -1,20 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-fixed bg-dark">
+
+<nav class="navbar navbar-expand-lg navbar-fixed">
   <div class="container">
     <a class="navbar-brand" href="#">MEAN App</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
-      aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
     <div class="collapse navbar-collapse" id="navbarsExample07">
       <ul class="navbar-nav mr-auto navbar-left">
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" [routerLink]="['/']">Home</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link"
+            [routerLink]="['/']">Home</a></li>
       </ul>
       <ul class="navbar-nav ml-auto navbar-right">
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a class="nav-link" [routerLink]="['/login']">Login</a></li>
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a class="nav-link" [routerLink]="['/reg-popup']">Register</a></li>
+
+
+        <div class="container">
+          <a data-toggle="tooltip" title="Hooray!">
+            <li>
+              Login</li>
+          </a>
+        </div>
+
+        <script>
+          $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+          });
+        </script>
+
       </ul>
     </div>
   </div>
