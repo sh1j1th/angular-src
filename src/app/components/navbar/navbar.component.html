@@ -1,33 +1,95 @@
+<div id="logInPopup" class="modal">
+  <form class="modal-content animate" style="width:40%">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('logInPopup').style.display='none'" class="close"
+        title="Close Modal">&times;</span>
+      <img src="./assets/trainer.svg" alt="Avatar" class="avatar" style="width: 30%; position: relative">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="pwd"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pwd" required>
+
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <input type="button" class="btn btn-success" value="Log In"
+      onclick="document.getElementById('logInPopup').style.display='none'">
+      <input type="button" onclick="document.getElementById('logInPopup').style.display='none'" class="btn btn-danger"
+        value="Cancel" style="margin-left: 20px">
+      <span class="pwd">Forgot password? Click <a href="#" id="pwdHelp">here</a></span>
+    </div>
+  </form>
+</div>
+
+<div id="regPopup" class="modal">
+  <div class="modal-content animate" style=" border:none; width:fit-content">
+    <div class="container-fluid">
+      <h3>Sign Up</h3>
+      <span onclick="document.getElementById('regPopup').style.display='none'" class="close"
+        title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <div class="card" style="width:130px; border: none; margin: auto">
+        <img class="card-img-top" src="./assets/trainer1.svg" alt="Trainer image" style="width:100%;">
+        <div class="card-body">
+          <input type="button" class="btn btn-info" value="Trainer" style="width:100%;"
+            [routerLink]="['/trainer-register']" onclick="document.getElementById('regPopup').style.display='none'">
+        </div>
+      </div>
+      <div class="card" style="width:130px; border: none; margin: auto;">
+        <img class="card-img-top" src="./assets/learner.svg" alt="Learner image" style="width:100%;">
+        <div class="card-body">
+          <input type="button" class="btn btn-info" value="Learner" style="width:100%;"
+            [routerLink]="['/learner-register']" onclick="document.getElementById('regPopup').style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <nav class="navbar navbar-expand-lg navbar-fixed">
-  <div class="container">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#">MEAN App</a>
-    <div class="collapse navbar-collapse" id="navbarsExample07">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto navbar-left">
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link"
             [routerLink]="['/']">Home</a></li>
       </ul>
       <ul class="navbar-nav ml-auto navbar-right">
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-          <a class="nav-link" [routerLink]="['/login']">Login</a></li>
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-          <a class="nav-link" [routerLink]="['/reg-popup']">Register</a></li>
-
-
-        <div class="container">
-          <a data-toggle="tooltip" title="Hooray!">
-            <li>
-              Login</li>
-          </a>
-        </div>
-
-        <script>
-          $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-          });
-        </script>
+        <li>
+          <input type="button" class="btn btn-info btn-sm mr-3"
+            onclick="document.getElementById('logInPopup').style.display='block'" value="Log In">
+        </li>
+        <li>
+          <input type="button" class="btn btn-warning btn-sm"
+            onclick="document.getElementById('regPopup').style.display='block'" value="Register">
+        </li>
 
       </ul>
     </div>
   </div>
 </nav>
+
+
+<script>
+  // Get the modal
+  var modal1 = document.getElementById('logInPopup');
+  var modal2 = document.getElementById('regPopup');
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
