@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { NgFlashMessageService } from 'ng-flash-messages';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -23,31 +23,27 @@ export class LearnerRegisterComponent implements OnInit {
   constructor(private validateService: ValidateService,
     private flashMessage: NgFlashMessageService,
     private http: HttpClient
-    ) { }
+  ) { }
 
   ngOnInit() {
   }
 
-  
-  onLearnerRegisterSubmit(learner){
+
+  onLearnerRegisterSubmit(learner) {
     console.log(learner.value)
 
-    var body = "firstName="+learner.firstName
-              +"&lastName="+learner.lastName
-              +"&contact="+learner.contact;
+    var body = "firstName=" + learner.firstName
+      + "&lastName=" + learner.lastName
+      + "&contact=" + learner.contact;
 
-    let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    let headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    this.http.post('http://localhost:3000/album/',body,
-            {headers: headers, responseType:'text'}).subscribe(
+    this.http.post('http://localhost:3000/learner/', body,
+      { headers: headers, responseType: 'text' }).subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
       )
-  }
-  
 
-  /*
-  onLearnerRegisterSubmit(){
     const user = {
       firstName: this.firstName,
       lastName: this.lastName,
@@ -57,50 +53,49 @@ export class LearnerRegisterComponent implements OnInit {
       password: this.password,
       confPassword: this.confPassword,
       tNc: this.tNc
-
     }
     //Required Fields
-    if(!this.validateService.validateLearnerRegister(user)){
+    if (this.validateService.validateLearnerRegister(user)) {
       this.flashMessage.showFlashMessage({
         // Array of messages each will be displayed in new line
-        messages: ["Please fill in all the fields"], 
+        messages: ["Please fill in all the fields"],
         // Whether the flash can be dismissed by the user defaults to false
-        dismissible: true, 
+        dismissible: true,
         // Time after which the flash disappears defaults to 2000ms
         timeout: 5000,
         // Type of flash message, it defaults to info and success, warning, danger types can also be used
         type: 'danger'
-      }); 
+      });
     }
 
     //Validate Email
-    if(!this.validateService.validateEmail(user.email)){
+    if (!this.validateService.validateEmail(user.email)) {
       this.flashMessage.showFlashMessage({
         // Array of messages each will be displayed in new line
-        messages: ["Please fill in a valid email"], 
+        messages: ["Please fill in a valid email"],
         // Whether the flash can be dismissed by the user defaults to false
-        dismissible: true, 
+        dismissible: true,
         // Time after which the flash disappears defaults to 2000ms
         timeout: true,
         // Type of flash message, it defaults to info and success, warning, danger types can also be used
         type: 'danger'
-      }); 
+      });
     }
 
     //validate Terms and conditions
-    if(!this.validateService.validateTnC(user.tNc)){
+    if (!this.validateService.validateTnC(user.tNc)) {
       this.flashMessage.showFlashMessage({
         // Array of messages each will be displayed in new line
-        messages: ["Please agree to our tnc"], 
+        messages: ["Please agree to our tnc"],
         // Whether the flash can be dismissed by the user defaults to false
-        dismissible: true, 
+        dismissible: true,
         // Time after which the flash disappears defaults to 2000ms
         timeout: true,
         // Type of flash message, it defaults to info and success, warning, danger types can also be used
         type: 'danger'
-      }); 
+      });
     }
   }
-  */
+
 
 }
