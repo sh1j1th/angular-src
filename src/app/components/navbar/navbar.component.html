@@ -3,13 +3,13 @@
     <div class="imgcontainer">
       <span onclick="document.getElementById('logInPopup').style.display='none'" class="close"
         title="Close Modal">&times;</span>
-        <h3 style="color: white; text-align: center; padding-top: 10px">Log In</h3>
-   <!--   <img src="./assets/trainer.svg" alt="Avatar" class="avatar" style="width: 30%;">
+      <h3 style="color: white; text-align: center; padding-top: 10px">Log In</h3>
+      <!--   <img src="./assets/trainer.svg" alt="Avatar" class="avatar" style="width: 30%;">
     -->
     </div>
 
     <div class="container">
-      
+
       <input type="text" placeholder="Enter Username" name="uname" required>
 
       <input type="password" placeholder="Enter Password" name="pwd" required>
@@ -20,18 +20,20 @@
       </label>
     </div>
 
-    <div class="container" style="background-color:#5cdb95;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px">
+    <div class="container"
+      style="background-color:#5cdb95;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px">
       <input type="button" class="btn btn-success" value="Log In"
-      onclick="document.getElementById('logInPopup').style.display='none'">
+        onclick="document.getElementById('logInPopup').style.display='none'">
       <input type="button" onclick="document.getElementById('logInPopup').style.display='none'" class="btn btn-danger"
-        value="Cancel" style="margin-left: 20px">
+        value="Cancel" style="margin-left: 20px;">
       <span class="pwd" style="color: #f1f1f1">Forgot password? Click <a href="#" id="pwdHelp">here</a></span>
     </div>
   </form>
 </div>
 
 <div id="regPopup" class="modal">
-  <div class="modal-content animate" style=" padding-top: 10px; border:none; width:fit-content; color:white; text-align:center">
+  <div class="modal-content animate"
+    style=" padding-top: 10px; border:none; width:fit-content; color:white; text-align:center">
     <div class="container-fluid">
       <h3>Sign Up</h3>
       <span onclick="document.getElementById('regPopup').style.display='none'" class="close"
@@ -64,12 +66,11 @@
     <a class="navbar-brand" href="#">MEAN App</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto navbar-left">
-        
-            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-              <input type="button" class="btn btn-sm mr-3"
-              [routerLink]="['/']" value="Home">
-            </li>
-          
+
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <input type="button" class="btn btn-sm mr-3" [routerLink]="['/']" value="Home">
+        </li>
+
       </ul>
       <ul class="navbar-nav ml-auto navbar-right">
         <li>
@@ -77,8 +78,8 @@
             onclick="document.getElementById('logInPopup').style.display='block'" value="Log In">
         </li>
         <li>
-          <input type="button" class="btn btn-sm"
-            onclick="document.getElementById('regPopup').style.display='block'" value="Register">
+          <input type="button" class="btn btn-sm" onclick="document.getElementById('regPopup').style.display='block'"
+            value="Register">
         </li>
 
       </ul>

@@ -14,9 +14,11 @@
     
 }
 .btn{
-    border:0 0 10px;
-    border-color: #5cdb95 ;
+    border-width: 3px;
+    border-bottom-color: #5cdb95;
     color: #5CDB95;
+    opacity: 0.8;
+    background: white;
     margin-top: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     
@@ -24,13 +26,23 @@
 div{
     justify-content: center;
 }
-input:hover{
+input:hover,input:focus{
     box-shadow:0 0 5px white;
-    background: white;
+    background: white !important;
+    color: #5CDB95;
+    opacity: 0.6;
+}
+::placeholder{
+    color: white;
+    text-align: center;
+    font-weight: 600;
 }
 input[type=text]{
+    justify-content: center;
     background: transparent;
-}
-input:focus{
-    background:white;
+    border-width: 3px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #5cdb95;
 }
