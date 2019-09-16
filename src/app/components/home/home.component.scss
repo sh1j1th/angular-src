@@ -15,7 +15,7 @@
 }
 .btn{
     border:0 0 10px;
-    border-color: #5cdb95 ;
+    border-color: white ;
     color: #5CDB95;
     margin-top: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
@@ -28,7 +28,7 @@ input:hover{
     box-shadow:0 0 5px white;
     background: white;
 }
-input[type=text]{
+input{
     background: transparent;
 }
 input:focus{
