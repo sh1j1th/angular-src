@@ -1,4 +1,4 @@
-<div class="flex-container justify-content-center" style="margin-top: 1cm; border:none;">
+<div class="flex-container justify-content-center" style="padding-top: 1cm; border:none;">
     <div>
         <h3>Learner Signup</h3>
         <form #f="ngForm" (ngSubmit)="onLearnerRegisterSubmit(f.value)" class="form form-register">
@@ -48,7 +48,8 @@
                         placeholder="Re-type password" required>
                 </div>
             </div>
-            <div class="form-inline">
+            <div class="form-inline form-group">
+                
                 <input type="checkbox" class="form-control" [(ngModel)]="tNc" name="tNc" required>
                 <small>Agree to our <a href="#">Terms and Conditions</a></small>
             </div>

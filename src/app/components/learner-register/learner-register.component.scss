@@ -1,5 +1,6 @@
 label{
     color: white;
+    font-weight: 500;
 }
 
 h3{
@@ -8,8 +9,11 @@ h3{
 
 small{
     color: white;
+    font-weight: 500;
 }
 .flex-container {
     display: flex;
     flex-direction: center;
+    background-color: transparentize($color: #000000, $amount: .4);
+    height: 80vh;
   }

@@ -1,28 +1,26 @@
 .btn-sm{
-  background-color: #5CDB95;
-  color: #05386B;
-  border-width: 3px;
-  border-bottom-color: #05386B;
+  background-color: white;
+  color: black;
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  border-radius: 1.5rem;
+  font-weight: 600;
 }
 .btn:hover,.btn:focus{
-  box-shadow: 0 0 5px  #05386B;
+  box-shadow: 0 0 5px  #05386b;
 }
 a{
-    color:#05386B;
+    color:white;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
 }
 #pwdHelp{
   color: blue;
 }
 
-.navbar{
-    background-color: #5CDB95;
-  
-}
+
 label{
   padding-top:15px;
 }
+
 
 
 /* Full-width input fields */
@@ -36,7 +34,7 @@ input[type=text], input[type=password] {
   border-radius: 5px;
 }
 input:focus, input:hover{
-  box-shadow: 0 0 5px #5CDB95;
+  box-shadow: 0 0 5px #1b9fc6;
 }
 
 .container {
@@ -70,7 +68,7 @@ span.pwd {
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
    /* Could be more or less, depending on screen size */
    //background-color: #379683;
-   background: transparent;
+   background-color: transparentize($color: #000000, $amount: .3) ; 
    border: none;
    border-radius: 10px;
    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
@@ -118,8 +116,6 @@ span.pwd {
      width: 100%;
   }
 }
-
-
 
 .card{
   background: transparent;
