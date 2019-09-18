@@ -38,7 +38,7 @@ export class LearnerRegisterComponent implements OnInit {
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    this.http.post('http://localhost:3000/learner/', body,
+    this.http.post('http://localhost:3000/api/learnerRegister', body,
       { headers: headers, responseType: 'text' }).subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
