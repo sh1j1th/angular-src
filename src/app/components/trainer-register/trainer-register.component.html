@@ -1,104 +1,103 @@
-<div class="flex-container d-flex justify-content-center" style="padding-top: 1cm; border: none;">
+<div class="flex-container d-flex justify-content-center" style="padding-top: 1cm; border: none;height: fit-content;">
 
-<div>
-    <h3>Trainer Signup</h3>
+    <div>
+        <h3>Trainer Signup</h3>
 
-    <form>
+        <form #form="ngForm" (ngSubmit)="onTrainerRegisterSubmit(form.value)" class="form">
 
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="trainer_fname">First name</label>
-                <input type="text" class="form-control" id="trainer_fname" placeholder="First name" required>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="trainer_fname">First name</label>
+                    <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName"
+                        placeholder="First name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="trainer_lname">Last name</label>
+                    <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName"
+                        placeholder="Last name" required>
+                </div>
             </div>
-            <div class="form-group col-md-6">
-                <label for="trainer_lname">Last name</label>
-                <input type="text" class="form-control" id="trainer_lname" placeholder="Last name" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-md-4">
-                <label for="technologySelect2">Skills</label>
-                <select multiple class="form-control" id="technologySelect1" required multiple> 
-                    <option selected disabled>Choose...</option>
-                    <option value="python">Python</option>
-                    <option value="meanS">MEAN stack</option>
-                    <option value="javaFS">Java Fullstack</option>
-                    <option value="dotnetFS">Dotnet Fullstack</option>
-                    <option value="cSharp">C#</option>
-                </select>
-            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="technologySelect">Skills</label>
+                    <select multiple class="form-control" [(ngModel)]="technologySelect" name="technologySelect"
+                        required multiple>
+                        <option selected disabled>Choose...</option>
+                        <option value="python">Python</option>
+                        <option value="meanS">MEAN stack</option>
+                        <option value="javaFS">Java Fullstack</option>
+                        <option value="dotnetFS">Dotnet Fullstack</option>
+                        <option value="cSharp">C#</option>
+                    </select>
+                </div>
 
-            <div class="form-group col-md-4">
-                <label class="" for="experienceSelect1">Experience</label>
-                <select class="custom-select" id="experienceSelect1" required>
-                    <option selected disabled>Choose...</option>
-                    <option value="lessThan5">Less than 5</option>
-                    <option value="5-7">Between 5 & 7</option>
-                    <option value="7-10">Between 7 & 10</option>
-                    <option value="10+">More than 10</option>
-                </select>
-            </div>
+                <div class="form-group col-md-4">
+                    <label class="" for="experienceSelect">Experience</label>
+                    <select class="custom-select" [(ngModel)]="experienceSelect" name="experienceSelect" required>
+                        <option selected disabled value=undefined>Choose...</option>
+                        <option value="lessThan5">Less than 5</option>
+                        <option value="5-7">Between 5 & 7</option>
+                        <option value="7-10">Between 7 & 10</option>
+                        <option value="10+">More than 10</option>
+                    </select>
+                </div>
 
-            <div class="form-group col-md-4">
-                <label for="technologySelect2">Materials provided</label>
-                <select multiple class="form-control" id="materialsSelect1" required> 
-                    <option selected disabled>Choose...</option>
-                    <option>Hands on</option>
-                    <option>Pdfs</option>
-                    <option>Slides</option>
-                    <option>Video lectures</option>
-                    <option>Lecture notes</option>
-                    <option>Cloud Labs</option>
-                </select>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="trainer_contact">Contact Number</label>
-                <input type="tel" class="form-control" id="trainer_contact" placeholder="Enter 10 digits only" required>
+                <div class="form-group col-md-4">
+                    <label for="materialSelect">Materials provided</label>
+                    <select multiple class="form-control" [(ngModel)]="materialSelect" name="materialSelect" required>
+                        <option selected disabled>Choose...</option>
+                        <option>Hands on</option>
+                        <option>Pdfs</option>
+                        <option>Slides</option>
+                        <option>Video lectures</option>
+                        <option>Lecture notes</option>
+                        <option>Cloud Labs</option>
+                    </select>
+                </div>
 
             </div>
-            <div class="form-group col-md-6">
-                <label for="trainer_linkedin">Linked In address</label>
-                <input type="email" class="form-control" id="trainer_linkedin" placeholder="username@linkedin.com"
-                    required>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="form-group col-md-4">
-                <label for="trainer_email">Email address</label>
-                <input type="email" class="form-control" id="trainer_email" placeholder="name@example.com" required>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" class="form-control" [(ngModel)]="contact" name="contact"
+                        placeholder="Enter 10 digits only" required>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="linkedinId">Linked In address</label>
+                    <input type="email" class="form-control" [(ngModel)]="linkedinId" name="linkedinId"
+                        placeholder="username@linkedin.com" required>
+                </div>
             </div>
-            <div class="form-group col-md-4">
-                <label for="trainer_pwd">Password</label>
-                <input type="password" class="form-control" id="trainer_pwd" placeholder="password" required>
-                <small id="passwordHelpBlock" class="form-text text-muted">
-                    Your password must be 8-20 characters long, must contain letters, numbers and special
-                    characters
-                </small>
+
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" [(ngModel)]="email" name="email"
+                        placeholder="name@example.com" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" [(ngModel)]="password" name="password"
+                        placeholder="password" required>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        Your password must be 8-20 characters long, must contain letters, numbers and special
+                        characters
+                    </small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="confPassword">Re-type password</label>
+                    <input type="password" class="form-control" [(ngModel)]="confPassword" name="confPassword"
+                        placeholder="Re-type password" required>
+                </div>
             </div>
-            <div class="form-group col-md-4">
-                <label for="trainer_conf_pwd">Re-type password</label>
-                <input type="password" class="form-control" id="trainer_conf_pwd" placeholder="Re-type password"
-                    required>
+            <div class="form-group">
+                <input type="checkbox" [(ngModel)]="tNc" name="tNc" unchecked required>
+                <small>Agree to our <a href="#">Terms and Conditions</a></small>
             </div>
-        </div>
-        <div class="form-group">
-            <input type="checkbox" required>
-            <small>Agree to our <a href="#">Terms and Conditions</a></small>
-        </div>
-        <button class="btn btn-primary" type="submit" style="margin-top: 5px; color: white;">
-            Submit</button>
-            <script type="text/javascript">
-                $(function () {
-                    $('#technologySelect1').multiselect({
-                        includeSelectAllOption: true
-                    });
-                });
-            </script>
-    </form>
-</div>
+            <button class="btn btn-primary" type="submit" style="margin-top: 5px; color: white;">
+                Submit</button>
+        </form>
+    </div>
 </div>
