@@ -37,13 +37,13 @@ export class LearnerRegisterComponent implements OnInit {
       + "&contact=" + learner.contact;
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-
+/*
     this.http.post('http://localhost:3000/api/learnerRegister', body,
       { headers: headers, responseType: 'text' }).subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
       )
-
+*/
     const user = {
       firstName: this.firstName,
       lastName: this.lastName,

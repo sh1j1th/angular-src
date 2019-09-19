@@ -40,8 +40,8 @@ export class TrainerRegisterComponent implements OnInit {
       { headers: headers, responseType: 'text' }).subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
-      )
-
+      )}
+/* this validation is not necessary, creates an overhead call instead use *ngIf
     const user = {
       firstName: this.firstName,
       lastName: this.lastName,
@@ -94,5 +94,5 @@ export class TrainerRegisterComponent implements OnInit {
       });
     }
   }
-
-} 
+*/
+}
