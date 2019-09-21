@@ -11,9 +11,32 @@ small{
     color: white;
     font-weight: 500;
 }
+.card{
+    border: none;
+    width: 60vh;
+    max-width: 80vh;
+}
+.card-header{
+    background: linear-gradient( rgb(36, 235, 36),black);
+    border: none;
+    text-align: center;
+}
+.card-body{
+    background: transparentize($color: black, $amount: 0);
+}
+.card-footer{
+    background: linear-gradient( black,rgb(36, 235, 36));
+    border: none;
+}
+.fa-user-circle{
+    font-size: 300%;
+    color: white;
+}
 .flex-container {
     display: flex;
     flex-direction: center;
-    background-color: transparentize($color: #000000, $amount: .4);
-    height: 80vh;
+    background: black;
+    height: fit-content;
+    
+    width: 100%;
   }

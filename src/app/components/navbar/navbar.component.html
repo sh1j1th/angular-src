@@ -1,11 +1,12 @@
+
+<!--
 <div id="logInPopup" class="modal">
   <form class="modal-content animate" style="width:30%">
     <div class="imgcontainer">
       <span onclick="document.getElementById('logInPopup').style.display='none'" class="close"
         title="Close Modal">&times;</span>
       <h3 style="color: white; text-align: center; padding-top: 10px">Log In</h3>
-      <!--   <img src="./assets/trainer.svg" alt="Avatar" class="avatar" style="width: 30%;">
-    -->
+      
     </div>
 
     <div class="container">
@@ -29,7 +30,45 @@
       <span class="pwd" style="color: #f1f1f1">Forgot password? Click <a href="#" id="pwdHelp">here</a></span>
     </div>
   </form>
-</div>
+</div>-->
+
+
+<div id="logInPopup" class="modal">
+    <form class="modal-content animate" style="width:30%">
+      <div class="card">
+        <div class="card-header">
+          
+            <span onclick="document.getElementById('logInPopup').style.display='none'" class="close"
+              title="Close Modal">&times;</span>
+            <h3 style="color: white; text-align: center; padding-top: 10px">Log In</h3>
+         
+        </div>
+        <div class="card-body">
+          <div class="container">
+  
+            <input type="text" placeholder="Enter Username" name="uname" required>
+  
+            <input type="password" placeholder="Enter Password" name="pwd" required>
+  
+  
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="form-inline">
+            <input type="button" class="btn btn-success" value="Log In"
+              onclick="document.getElementById('logInPopup').style.display='none'">
+            <input type="button" onclick="document.getElementById('logInPopup').style.display='none'"
+              class="btn btn-danger" value="Cancel" >
+            <span class="pwd" style="color: #f1f1f1">Forgot password? Click <a href="#" id="pwdHelp">here</a></span>
+          </div>
+        </div>
+     
+      </div>
+    </form>
+  </div>
 
 <div id="regPopup" class="modal">
   <div class="modal-content animate"

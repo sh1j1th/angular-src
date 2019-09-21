@@ -1,16 +1,16 @@
 .btn-sm{
   background-color: white;
   color: black;
-  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  
   border-radius: 1.5rem;
   font-weight: 600;
 }
 .btn:hover,.btn:focus{
-  box-shadow: 0 0 5px  #05386b;
+  box-shadow: 0 0 5px;
 }
 a{
     color:white;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+   
 }
 #pwdHelp{
   color: blue;
@@ -21,16 +21,26 @@ label{
   padding-top:15px;
 }
 
-
+.card{
+  background: transparent;
+  border: none;
+}
+.card-footer{
+  border: none;
+}
+.card-header{
+  border: none;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
-  padding: 8px 15px;
+  padding: 8px 10px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+background: transparentize($color: #000000, $amount: 0.6);
+  border-bottom: 10px red !important;
+  
   border-radius: 5px;
 }
 input:focus, input:hover{
@@ -55,11 +65,11 @@ span.pwd {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%; 
+  height: fit-content; 
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
+ 
   background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  
  
 }
 
@@ -68,10 +78,10 @@ span.pwd {
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
    /* Could be more or less, depending on screen size */
    //background-color: #379683;
-   background-color: transparentize($color: #000000, $amount: .3) ; 
+   background: transparent;
    border: none;
    border-radius: 10px;
-   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  
 }
 
 /* The Close Button (x) */

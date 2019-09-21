@@ -25,7 +25,7 @@
 
                         <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert alert-danger">
                             <div *ngIf="lname.errors?.required">
-                                L   astname is required.
+                                Lastname is required.
                             </div>
                         </div>
                         
@@ -75,7 +75,15 @@
                 <div class="form-group col-md-6">
                     <label for="contact">Contact Number</label>
                     <input type="tel" class="form-control" [(ngModel)]="contact" name="contact"
-                        placeholder="Enter 10 digits only" required>
+                        placeholder="Enter 10 digits only"  pattern="[7-9][0-9]{9}$" required #cname="ngModel">
+
+                        <div *ngIf="cname.invalid && (cname.dirty || cname.touched)" class="alert alert-danger">
+                            <div *ngIf="cname.errors.pattern">
+                                Contact number is required.
+                            </div>
+                        </div>
+
+                       
 
                 </div>
                 <div class="form-group col-md-6">

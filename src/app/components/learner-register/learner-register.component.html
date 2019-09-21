@@ -1,58 +1,46 @@
 <div class="flex-container justify-content-center" style="padding-top: 1cm; border:none; height: fit-content;">
-    <div>
-        <h3>Learner Signup</h3>
-        <form #f="ngForm" (ngSubmit)="onLearnerRegisterSubmit(f.value)" class="form">
-            <!--change to f.value-->
-            <div class="row">
-                <div class="form-group col-md-6">
+
+    <form #f="ngForm" (ngSubmit)="onLearnerRegisterSubmit(f.value)" class="form">
+        <!--change to f.value-->
+
+        <div class="card">
+            <div class="card-header">
+                
+                <h3>Learner</h3>
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                
+            </div>
+            <div class="card-body">
+                <div class="form-group">
                     <label for="learner_fname">First name</label>
                     <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName"
                         placeholder="First name" required>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="learner_lname">Last name</label>
-                    <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName"
-                        placeholder="Last name" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group">
                     <label for="learner_contact">Contact Number</label>
                     <input type="tel" class="form-control" [(ngModel)]="contact" name="contact"
                         placeholder="Enter 10 digits only" required>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="learner_linkedin">Linked In address</label>
-                    <input type="email" class="form-control" [(ngModel)]="linkedInId" name="linkedInId"
-                        placeholder="username@linkedin.com">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-4">
+                <div class="form-group">
                     <label for="learner_email">Email address</label>
                     <input type="email" class="form-control" [(ngModel)]="email" name="email"
                         placeholder="name@example.com" required>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group">
                     <label for="learner_pwd">Password</label>
                     <input type="password" class="form-control" [(ngModel)]="password" name="password"
                         placeholder="password" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        Your password must be 8-20 characters long, must contain letters, numbers and special
-                        characters
-                    </small>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="learner_conf_pwd">Re-type password</label>
-                    <input type="password" class="form-control" [(ngModel)]="confPassword" name="confPassword"
-                        placeholder="Re-type password" required>
+                    
                 </div>
             </div>
-            <div class="form-group">
-                <input type="checkbox" [(ngModel)]="tNc" name="tNc" required>
-                <small>Agree to our <a href="#">Terms and Conditions</a></small>
+            <div class="card-footer">
+                <div class="form-group">
+                    <input type="checkbox" [(ngModel)]="tNc" name="tNc" checked required>
+                    <small>Agree to our <a href="#">Terms and Conditions</a></small>
+                </div>
+                <input class="btn btn-primary" type="submit" style="margin-top: 5px" value="Submit">
             </div>
-            <input class="btn btn-primary" type="submit" style="margin-top: 5px" value="Submit">
-        </form>
-    </div>
+        </div>
+    </form>
+
 </div>
