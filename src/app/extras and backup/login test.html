@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 100%;
+            
+        }
+ 
+
+        .input {
+            width: 100%;
+          display: block;
+         
+          
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <span onclick="document.getElementById('logInPopup').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+        </div>
+        <div class="card-body">
+            <form class="form-signin mb-3">
+                
+                    <input type="text" placeholder="Username" class="form-control" name="username" required>
+
+                    <input type="password" placeholder="Password" class="form-control" name="password" required>
+                    
+               
+
+        </div>
+        <div class="card-footer">
+            <input type="button" class="btn btn-success" value="Log In"
+                onclick="document.getElementById('logInPopup').style.display='none'">
+        </div>
+        </form>
+    </div>
+</body>
+
+</html>
